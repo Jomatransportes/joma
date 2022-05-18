@@ -1,18 +1,24 @@
-<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
+<a class="[ skip-link ] [ button ]" href="#main-content">Ir para conteúdo</a>
 <header role="banner" class="site-head">
   <div class="wrapper">
     <div class="site-head__inner">
-      <a href="/" aria-label="{{ site.name }} - home" class="site-head__brand">
-        LOGO HERE
-      </a>
-      <nav
-        class="[ nav ] [ site-head__nav ]"
-        aria-label="Primary navigaton"
-      >
-        <ul class="nav__list">
+      <h1>
+        <a href="/" aria-label="{{ site.name }} - home" class="site-head__brand">
+          {% prismic_asText prismic.home.data.titulo %}
+        </a>
+      </h1>
+      <nav class="[ nav ] [ site-head__nav ]" aria-label="Primary navigaton">
+        <ul class="nav__list" role="list">
           {% for item in navigation.items %}
           <li>
-            <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+            <a
+              href="{{ item.url }}"
+              {{
+              helpers.getLinkActiveState(item.url,
+              page.url)
+              |
+              safe
+              }}
               >{{ item.text }}</a
             >
           </li>

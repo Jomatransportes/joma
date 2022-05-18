@@ -1,21 +1,39 @@
-{% extends "layouts/base.njk" %} 
+{% extends "layouts/base.njk" %}
 
+<!-- content -->
 {% block content %}
-<div class="wrapper flow">
-  <h1>Homepage</h1>
-  <h2>Site info</h2>
-  <dl>
-    <dt>name</dt>
-    <dd>{{ site.name }}</dd>
-    <dt>url</dt>
-    <dd>{{ site.url }}</dd>
-    <dt>authorName (RSS)</dt>
-    <dd>{{ site.authorName }}</dd>
-    <dt>authorEmail (RSS)</dt>
-    <dd>{{ site.authorEmail }}</dd>
-  </dl>
-  <h2>Posts</h2>
-  {% set postListItems = collections.blog %}
-  {% include "partials/post-list.njk" %}
+<div class="wrapper flow flow-space-900">
+  <article class="intro">
+    <div class="[ intro__header ] [ radius frame ]"></div>
+    <div class="[ intro__content ] [ flow ]">
+      {% prismic_asHTML prismic.home.data.paragrafo, {class: 'intro__head'} %}
+      <a
+        class="button"
+        href="https://api.whatsapp.com/send?phone=5561996241966&text=Texto%20aqui"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-variant="dark"
+      >
+        Fale conosco pelo whatsapp
+      </a>
+    </div>
+    <div class="[ intro__media ] [ radius dot-shadow ]">
+      <img class="[ intro__image ] [ radius ]" />
+    </div>
+  </article>
+
+  <section class="[ main__about ] [ flow ]">
+    <h2 class="text-700">Sobre nós</h2>
+
+    <div class="flow flow-space-300">{% prismic_asHTML prismic.home.data.sobre %}</div>
+  </section>
+  <section class="flow" id="contato">
+    <h2 class="text-700">{% prismic_asText prismic.sobre.data.titulo %}</h2>
+
+    <div class="flow flow-space-300">
+      {% prismic_asHTML prismic.sobre.data.paragrafo %}
+    </div>
+  </section>
 </div>
+
 {% endblock %}

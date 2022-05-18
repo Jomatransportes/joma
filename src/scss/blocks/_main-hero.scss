@@ -1,0 +1,25 @@
+.main__hero {
+  display: grid;
+  grid-template-columns: 50ch 1fr;
+  grid-template-rows: 5rem auto auto;
+  gap: get-size('700');
+
+  div {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  a {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  figure {
+    width: 100%;
+    background-color: cornflowerblue;
+    min-height: 35rem;
+
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+}

@@ -1,0 +1,30 @@
+.site-head {
+  padding: get-size('700') 0;
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__brand {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    > * + * {
+      margin-left: get-size('400');
+      margin-inline-end: get-size('400');
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -6,6 +6,17 @@ const w3DateFilter = require('./src/filters/w3-date-filter.js');
 
 const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
 
+const {pluginPrismic, definePrismicPluginOptions} = require('eleventy-plugin-prismic');
+
+require('dotenv').config();
+const PRISMIC_URI = process.env.PRISMIC_URI;
+
+const prismicPluginOptions = definePrismicPluginOptions({
+  endpoint: PRISMIC_URI,
+  singletons: ['home', 'sobre'],
+  shortcodesNamespace: 'prismic'
+});
+
 module.exports = config => {
   // Add filters
   config.addFilter('dateFilter', dateFilter);
@@ -13,6 +24,8 @@ module.exports = config => {
 
   // Plugins
   config.addPlugin(rssPlugin);
+  config.addPlugin(pluginPrismic, prismicPluginOptions);
+  config.prismicPluginOptions = prismicPluginOptions;
 
   // Returns a collection of blog posts in reverse date order
   config.addCollection('blog', collection => {
