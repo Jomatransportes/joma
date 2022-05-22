@@ -6,7 +6,7 @@
   <article class="intro">
     <div class="[ intro__header ] [ radius frame ]"></div>
     <div class="[ intro__content ] [ flow ]">
-      {% prismic_asHTML prismic.home.data.paragrafo, {class: 'intro__head'} %}
+      {% prismic_asHTML prismic.home.data.paragraph %}
       <a
         class="button"
         href="https://api.whatsapp.com/send?phone=5561996241966"
@@ -25,27 +25,37 @@
     </div>
   </article>
 
-  <article class="[ main__about ] [ flow ]">
+  <article class="[ main__about ] [ flow flow-space-700 ]">
     <h2 class="text-700">Sobre nós</h2>
 
     <div class="steps">
       <ul role="list" class="auto-grid">
         {% for item in prismic.card %}
         <li class="card flow">
-          {% prismic_asHTML item.data.titulo %} {% prismic_asHTML item.data.paragrafo %}
+          {% prismic_asHTML item.data.title %} 
+          
+          {% prismic_asHTML item.data.paragraph %}
         </li>
         {% endfor %}
       </ul>
     </div>
   </article>
-  <article class="flow" id="contato">
-    <h2 class="text-700">{% prismic_asText prismic.sobre.data.titulo %}</h2>
 
-    <div class="flow flow-space-300">
-      {% prismic_asHTML prismic.sobre.data.paragrafo %}
+  <article class="[ main__info ] [ flow flow-space-500 ]" id="contato">
+    <h2 class="text-700">Mais informações</h2>
+
+    <div>
+      <ul role="list" class="flow flow-space-900">
+        {% for item in prismic.info %}
+        <li class="flow flow-space-300">
+          {% prismic_asHTML item.data.title %} 
+          
+          {% prismic_asHTML item.data.paragraph %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </article>
 </div>
 
-<!-- {{ prismic.card.data | log }} -->
 {% endblock %}
