@@ -4,6 +4,12 @@
   &__inner {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
+    gap: get-size('500');
+
+    > * + * {
+      margin-left: get-size('500');
+    }
   }
 
   &__brand {
