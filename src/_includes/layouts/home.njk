@@ -17,8 +17,9 @@
       </a>
     </div>
     <div class="[ intro__media ] [ radius dot-shadow ]">
-      {# {% prismic_image prismic.home.data.main_image, { class: "[ intro__image ] [ radius ]", alt: "Caixa plástica modelo DP 9", loading: "lazy" }  %} #}
-      {% prismic_image prismic.home.data.main_image, "[ intro__image ] [ radius ]" %}
+      {% prismic_image prismic.home.data.main_image,
+        "class", "[ intro__image ] [ radius ]","heigh", "482", "width", "306"
+      %}
     </div>
   </article>
 
