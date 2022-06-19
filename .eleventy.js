@@ -29,11 +29,6 @@ module.exports = config => {
   config.addPlugin(pluginPrismic, prismicPluginOptions);
   config.prismicPluginOptions = prismicPluginOptions;
 
-  // Returns a collection of blog posts in reverse date order
-  config.addCollection('blog', collection => {
-    return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
-  });
-
   // Tell 11ty to use the .eleventyignore and ignore our .gitignore file
   config.setUseGitIgnore(false);
 
