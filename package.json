@@ -4,7 +4,7 @@
   "description": "",
   "main": ".eleventy.js",
   "scripts": {
-    "sass": "sass src/scss/global.scss:dist/css/global.css",
+    "sass": "sass src/scss/global.scss:src/_includes/css/global.css",
     "start": "concurrently 'eleventy --serve --quiet' 'npm run sass -- --watch'",
     "production": "NODE_ENV=production eleventy && npm run sass -- --style=compressed --no-source-map"
   },
