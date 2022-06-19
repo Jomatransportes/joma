@@ -3,6 +3,7 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 // Filters
 const dateFilter = require('./src/filters/date-filter.js');
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
+const phoneFormatFilter = require('./src/filters/phone-format-filter.js');
 
 const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
 
@@ -21,6 +22,7 @@ module.exports = config => {
   // Add filters
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
+  config.addFilter('phoneFormatter', phoneFormatFilter);
 
   // Plugins
   config.addPlugin(rssPlugin);
@@ -38,6 +40,7 @@ module.exports = config => {
   // Pass through fonts and images
   config.addPassthroughCopy('./src/fonts');
   config.addPassthroughCopy('./src/images');
+  config.addPassthroughCopy('./src/favicon.ico');
 
   return {
     markdownTemplateEngine: 'njk',

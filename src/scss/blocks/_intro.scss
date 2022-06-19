@@ -1,10 +1,4 @@
 .intro {
-  ::selection {
-    // We set this as an RGBA because that's how you get a solid color, by usign 0.99
-    background-color: rgba(get-color('light'), 0.99);
-    color: get-color('dark-shade');
-  }
-
   // Default is a single column layout where header overlaps the media
   display: grid;
   grid-template-rows: get-size('900') minmax(0, 1fr) get-size('700') auto;
@@ -45,7 +39,7 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
@@ -61,7 +55,8 @@
   // above the header and content
   @include media-query('md') {
     grid-template-rows: get-size('500') auto auto auto;
-    grid-template-columns: minmax(50ch, 1fr) 1fr;
+    // grid-template-columns: minmax(50ch, 1fr) 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr));
 
     &__header {
       padding: get-size('500');

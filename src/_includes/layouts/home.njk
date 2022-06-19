@@ -9,19 +9,16 @@
       {% prismic_asHTML prismic.home.data.paragraph %}
       <a
         class="button"
-        href="https://api.whatsapp.com/send?phone=5561996241966"
-        target="_blank"
+        href="https://api.whatsapp.com/send?phone={{ prismic.home.data.phone | phoneFormatter }}"
         rel="noopener noreferrer"
+        data-variant="ghost"
       >
         Fale conosco pelo whatsapp
       </a>
     </div>
     <div class="[ intro__media ] [ radius dot-shadow ]">
-      <img
-        class="[ intro__image ] [ radius ]"
-        src="./images/DP09_00.png"
-        alt="Caixa plástica modelo DP 9"
-      />
+      {# {% prismic_image prismic.home.data.main_image, { class: "[ intro__image ] [ radius ]", alt: "Caixa plástica modelo DP 9", loading: "lazy" }  %} #}
+      {% prismic_image prismic.home.data.main_image, "[ intro__image ] [ radius ]" %}
     </div>
   </article>
 

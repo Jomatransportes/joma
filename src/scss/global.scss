@@ -50,14 +50,20 @@
 }
 
 body {
-  background: get-color('light');
-  color: get-color('dark-shade');
+  background: get-color('dark');
+  color: get-color('light');
   line-height: 1.5;
   font-size: get-size('500');
   padding: var(--space-l) 0;
   padding-block: var(--space-l);
 
   @include apply-utility('font', 'base');
+
+  ::selection {
+    // We set this as an RGBA because that's how you get a solid color, by usign 0.99
+    background-color: rgba(get-color('light'), 0.99);
+    color: get-color('dark-shade');
+  }
 }
 
 a:not([class]) {
@@ -129,7 +135,8 @@ dl {
   --flow-space: var(--space-s);
 
   padding: var(--space-s);
-  border: 1px dashed var(--color-dark-glare);
+  border: 3px dashed get-color('light');
+  border-radius: 0.25rem;
   border-radius: var(--radius);
 }
 .card p {
