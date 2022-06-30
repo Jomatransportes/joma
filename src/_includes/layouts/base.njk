@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% include "partials/meta-info.njk" %}
 
-    {% if "css/global.css" %}
-      <style>
-        {%- include "css/global.css" -%}
-      </style>
-    {% endif %}
-
-    
+    <style>
+      {%- include "../../../dist/css/global.css" -%}
+    </style>
 
     {# Add facility for pages to delare an array of critical styles #}
     {% if pageCriticalStyles %}
