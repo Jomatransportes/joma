@@ -1,4 +1,5 @@
 {% set assetHash = global.random() %}
+{% set pageCriticalStyles = ['css/global.css'] %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,10 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% include "partials/meta-info.njk" %}
-
-    <style>
-      {%- include "../../../dist/css/global.css" -%}
-    </style>
 
     {# Add facility for pages to delare an array of critical styles #}
     {% if pageCriticalStyles %}
