@@ -6,14 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="generator" content="{{ eleventy.generator }}">
     {% include "partials/meta-info.njk" %}
 
     <style>
       {%- include "css/global.css" -%}
     </style>
-
-    
-
     {# Add facility for pages to delare an array of critical styles #}
     {% if pageCriticalStyles %}
       {% for item in pageCriticalStyles %}
