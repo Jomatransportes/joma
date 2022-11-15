@@ -9,11 +9,8 @@ const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
 
 const {pluginPrismic, definePrismicPluginOptions} = require('eleventy-plugin-prismic');
 
-require('dotenv').config();
-const PRISMIC_URI = process.env.PRISMIC_URI;
-
 const prismicPluginOptions = definePrismicPluginOptions({
-  endpoint: PRISMIC_URI,
+  endpoint: 'jomatransportes',
   singletons: ['home', 'sobre'],
   shortcodesNamespace: 'prismic'
 });
