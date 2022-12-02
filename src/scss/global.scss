@@ -72,7 +72,7 @@ a:not([class]) {
 }
 
 :focus {
-  outline: 2px dashed get-color('primary');
+  outline: 2px dashed get-color('quaternary');
   outline-offset: 0.25rem;
 }
 
