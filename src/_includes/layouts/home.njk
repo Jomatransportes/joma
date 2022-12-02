@@ -31,7 +31,7 @@
       <ul role="list" class="auto-grid">
         {% for item in prismic.card %}
         <li class="card flow">
-          {% prismic_asHTML item.data.title %} 
+          <h3>{% prismic_asText item.data.title %}</h3>
           
           {% prismic_asHTML item.data.paragraph %}
         </li>
